@@ -1,0 +1,84 @@
+name: "transfomer_sample"
+
+data:
+    src: "src"
+    trg: "trg"
+    train: "data/sample/train_sorted.bpe"
+    dev:   "data/sample/dev.bpe"
+    test:  "data/sample/test.bpe"
+    level: "bpe"
+    lowercase: False
+    max_sent_length: 100
+    src_vocab: "data/sample/vocab.txt"
+    trg_vocab: "data/sample/vocab.txt"
+    difficulty: "data/sample/train.difficulty"
+
+testing:
+    beam_size: 5
+    alpha: 1.0
+
+training:
+    random_seed: 42
+    optimizer: "adam"
+    adam_betas: [0.9, 0.999]
+    scheduling: "noam"
+    learning_rate_warmup: 16000
+    learning_rate: 0.0002
+    learning_rate_min: 0.00000001
+    weight_decay: 0.0
+    batch_type: "token"
+    batch_size: 4096
+    batch_multiplier: 1
+    normalization: "tokens"
+    epochs: 10000
+    validation_freq: 800
+    logging_freq: 200
+    eval_metric: "bleu"
+    early_stopping_metric: "eval_metric"
+    loss: "crossentropy"
+    eval_batch_type: "token"
+    eval_batch_size: 4096
+    model_dir: "models/transformer_sample"
+    overwrite: True
+    shuffle: False
+    use_cuda: False
+    max_output_length: 100
+    keep_last_ckpts: 3
+    label_smoothing: 0.1
+    early_stopping_patience: 5
+    curriculum_learning: True
+
+model:
+    initializer: "xavier"
+    init_gain: 1.0
+    bias_initializer: "zeros"
+    embed_initializer: "xavier"
+    embed_init_gain: 1.0
+    tied_embeddings: True
+    tied_softmax: True
+    encoder:
+        type: "transformer"
+        num_layers: 4
+        num_heads: 4
+        embeddings:
+            embedding_dim: 512
+            scale: True
+            dropout: 0.2
+            freeze: False
+        hidden_size: 512
+        ff_size: 2048
+        dropout: 0.2
+        freeze: False
+    decoder:
+        type: "transformer"
+        num_layers: 4
+        num_heads: 4
+        embeddings:
+            embedding_dim: 512
+            scale: True
+            dropout: 0.2
+            freeze: False
+        hidden_size: 512
+        ff_size: 2048
+        dropout: 0.2
+        freeze: False
