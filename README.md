@@ -1,6 +1,7 @@
 # Edit Distance Based Curriculum Learning for Paraphrase Generation
 
-This repository provides an implementation of the curriculum learning method based on [competence-based curriculum learning](https://aclanthology.org/N19-1119).
+This repository provides an implementation of the edit distance based curriculum learning method.
+This method is based on [competence-based curriculum learning](https://aclanthology.org/N19-1119).
 
 ## Prerequisites
 Please make sure to install all the dependent libraries in ``requirements.txt``
@@ -20,11 +21,15 @@ For selecting the difficulty metric (sentence length, word rarity, edit distance
 
 ### Training
 ```
-python3 -m joeynmt train configs/transformer_sample.yanl
+python3 -m joeynmt train configs/transformer_sample.yaml
 ```
-I implement using [Joey NMT framework](https://github.com/joeynmt/joeynmt).
+I implemented using [Joey NMT framework](https://github.com/joeynmt/joeynmt).
 
 If you want to change the number of training steps which the model fully competent, please change ```total_steps```   in ```steps_based(steps)``` function in ```competence_metrics.py```
+
+## Dataset
+I applied the edit distance based curriculum learning for formality transformation.
+I used [Grammarly's Yahoo Answers Formality Corpus (GYAFC)](https://github.com/raosudha89/GYAFC-corpus) as the dataset.
 
 ## Citation
 When you use our codes in your projects, please cite the following paper.
