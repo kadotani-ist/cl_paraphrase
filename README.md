@@ -1,6 +1,6 @@
 # Edit Distance Based Curriculum Learning for Paraphrase Generation
 
-This repository provides an implementation of the edit distance based curriculum learning method.
+This repository provides an implementation of [edit distance based curriculum learning method](https://aclanthology.org/2021.acl-srw.24).
 This method is based on [competence-based curriculum learning](https://aclanthology.org/N19-1119).
 
 ## Prerequisites
