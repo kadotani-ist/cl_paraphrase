@@ -34,20 +34,21 @@ I used [Grammarly's Yahoo Answers Formality Corpus (GYAFC)](https://github.com/r
 ## Citation
 When you use our codes in your projects, please cite the following paper.
 
-Sora Kadotani, Tomoyuki Kajiwara, Yuki Arase, Makoto Onizuka. 2021. Edit Distance Based Curriculum Learning for Paraphrase Generation. In Proceedings of the Joint Conference of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing Student Research Workshop (ACL-IJCNLP 2021 SRW)", pp. ?-?.
+Sora Kadotani, Tomoyuki Kajiwara, Yuki Arase, Makoto Onizuka. 2021. Edit Distance Based Curriculum Learning for Paraphrase Generation. In Proceedings of the Joint Conference of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing Student Research Workshop (ACL-IJCNLP 2021 SRW)", pp. 229-234.
 ```
 @inproceedings{kadotani-etal-2021-edit,
     title = "Edit Distance Based Curriculum Learning for Paraphrase Generation",
     author = "Kadotani, Sora  and
-      Kajiwara, Tomoyuki and
-      Arase, Yuki and
-      Makoto, Onizuka",
-    booktitle = "The Joint Conference of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing Student Research Workshop (ACL-IJCNLP 2021 SRW)",
+      Kajiwara, Tomoyuki  and
+      Arase, Yuki  and
+      Onizuka, Makoto",
+    booktitle = "Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: Student Research Workshop",
     month = aug,
     year = "2021",
-    address = "Bangkok, Thailand (Online)",
-    publisher = "?",
-    url = "?",
-    doi = "?",
-    pages = "?--?"
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.acl-srw.24",
+    doi = "10.18653/v1/2021.acl-srw.24",
+    pages = "229--234",
+    abstract = "Curriculum learning has improved the quality of neural machine translation, where only source-side features are considered in the metrics to determine the difficulty of translation. In this study, we apply curriculum learning to paraphrase generation for the first time. Different from machine translation, paraphrase generation allows a certain level of discrepancy in semantics between source and target, which results in diverse transformations from lexical substitution to reordering of clauses. Hence, the difficulty of transformations requires considering both source and target contexts. Experiments on formality transfer using GYAFC showed that our curriculum learning with edit distance improves the quality of paraphrase generation. Additionally, the proposed method improves the quality of difficult samples, which was not possible for previous methods.",
 }
